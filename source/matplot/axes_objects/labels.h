@@ -55,45 +55,45 @@ namespace matplot {
 
     public /* getters and setters */:
         bool rectangles() const;
-        class labels& rectangles(bool rectangles);
+        labels& rectangles(bool rectangles);
 
         bool absolute_size() const;
-        class labels& absolute_size(bool absolute_size);
+        labels& absolute_size(bool absolute_size);
 
         enum alignment alignment() const;
-        class labels& alignment(enum alignment alignment);
+        labels& alignment(enum alignment alignment);
 
         const std::vector<double> &x() const;
-        class labels& x(const std::vector<double> &x);
+        labels& x(const std::vector<double> &x);
 
         const std::vector<double> &y() const;
-        class labels& y(const std::vector<double> &y);
+        labels& y(const std::vector<double> &y);
 
         const std::vector<std::string> &label_values() const;
-        class labels& label_values(const std::vector<std::string> &labels);
+        labels& label_values(const std::vector<std::string> &labels);
 
         const std::vector<double> &colors() const;
-        class labels& colors(const std::vector<double> &colors);
+        labels& colors(const std::vector<double> &colors);
 
         const std::vector<double> &sizes() const;
-        class labels& sizes(const std::vector<double> &sizes);
+        labels& sizes(const std::vector<double> &sizes);
 
         bool visible() const;
-        class labels& visible(bool visible);
+        labels& visible(bool visible);
 
         const color_array &color() const;
-        class labels& color(const color_array &color);
+        labels& color(const color_array &color);
         template <class T>
-        class labels& color(T c) {
+        labels& color(T c) {
             color(to_array(c));
             return *this;
         }
 
         const std::string &font() const;
-        class labels& font(const std::string &font);
+        labels& font(const std::string &font);
 
         float font_size() const;
-        class labels& font_size(float font_size);
+        labels& font_size(float font_size);
 
     public /* getters and setters bypassing the line_spec */:
     protected:

@@ -6,6 +6,8 @@
 #define MATPLOTPLUSPLUS_SURFACE_H
 
 #include <array>
+#include <optional>
+
 #include <matplot/util/concepts.h>
 #include <matplot/util/handle_types.h>
 #include <matplot/core/figure.h>
@@ -47,131 +49,131 @@ namespace matplot {
         enum axes_object::axes_category axes_category() override;
 
     public /* getters and setters */:
-        class surface& line_style(const std::string& line_spec);
+        surface& line_style(const std::string& line_spec);
 
         const line_spec &line_spec() const;
         class line_spec &line_spec();
-        class surface& line_spec(const class line_spec &line_spec);
+        surface& line_spec(const class line_spec &line_spec);
 
         const vector_2d &Y_data() const;
-        class surface& Y_data(const vector_2d &Y_data);
+        surface& Y_data(const vector_2d &Y_data);
 
         const vector_2d &X_data() const;
-        class surface& X_data(const vector_2d &X_data);
+        surface& X_data(const vector_2d &X_data);
 
         const vector_2d &Z_data() const;
-        class surface& Z_data(const vector_2d &Z_data);
+        surface& Z_data(const vector_2d &Z_data);
 
         size_t norm() const;
-        class surface& norm(size_t norm);
+        surface& norm(size_t norm);
 
         const vector_2d &x_data() const;
-        class surface& x_data(const vector_2d &x_data);
+        surface& x_data(const vector_2d &x_data);
 
         const vector_2d &y_data() const;
-        class surface& y_data(const vector_2d &y_data);
+        surface& y_data(const vector_2d &y_data);
 
         const vector_2d &z_data() const;
-        class surface& z_data(const vector_2d &z_data);
+        surface& z_data(const vector_2d &z_data);
 
         bool hidden_3d() const;
-        class surface& hidden_3d(bool hidden_3_d);
+        surface& hidden_3d(bool hidden_3_d);
 
         bool surface_visible() const;
-        class surface& surface_visible(bool surface_visible);
+        surface& surface_visible(bool surface_visible);
 
         bool surface_in_2d() const;
-        class surface& surface_in_2d(bool surface_in_2d);
+        surface& surface_in_2d(bool surface_in_2d);
 
         bool palette_map_at_bottom() const;
-        class surface& palette_map_at_bottom(bool palette_map_at_bottom);
+        surface& palette_map_at_bottom(bool palette_map_at_bottom);
 
         bool palette_map_at_surface() const;
-        class surface& palette_map_at_surface(bool palette_map_at_surface);
+        surface& palette_map_at_surface(bool palette_map_at_surface);
 
         bool palette_map_at_top() const;
-        class surface& palette_map_at_top(bool palette_map_at_top);
+        surface& palette_map_at_top(bool palette_map_at_top);
 
         bool contour_base() const;
-        class surface& contour_base(bool contour_base);
+        surface& contour_base(bool contour_base);
 
         bool contour_surface() const;
-        class surface& contour_surface(bool contour_surface);
+        surface& contour_surface(bool contour_surface);
 
         size_t contour_levels() const;
-        class surface& contour_levels(size_t contour_levels);
+        surface& contour_levels(size_t contour_levels);
 
         const std::vector<double> &contour_values() const;
-        class surface& contour_values(const std::vector<double> &contour_values);
+        surface& contour_values(const std::vector<double> &contour_values);
 
         bool contour_text() const;
-        class surface& contour_text(bool contour_text);
+        surface& contour_text(bool contour_text);
 
         const float font_size() const;
-        class surface& font_size(const float &font_size);
+        surface& font_size(const float &font_size);
 
         const std::string font() const;
-        class surface& font(const std::string &font);
+        surface& font(const std::string &font);
 
         const std::string &font_weight() const;
-        class surface& font_weight(const std::string &font_weight);
+        surface& font_weight(const std::string &font_weight);
 
         const color_array &font_color() const;
-        class surface& font_color(const color_array &font_color);
-        class surface& font_color(const std::string &font_color);
+        surface& font_color(const color_array &font_color);
+        surface& font_color(const std::string &font_color);
 
         bool depthorder() const;
 
-        class surface& depthorder(bool depthorder);
+        surface& depthorder(bool depthorder);
 
         float face_alpha() const;
-        class surface& face_alpha(float face_alpha);
+        surface& face_alpha(float face_alpha);
 
         bool lighting() const;
-        class surface& lighting(bool lighting);
+        surface& lighting(bool lighting);
 
         float primary() const;
-        class surface& primary(float amount);
+        surface& primary(float amount);
 
         float specular() const;
-        class surface& specular(float amount);
+        surface& specular(float amount);
 
         const class line_spec &contour_line_spec() const;
         class line_spec &contour_line_spec();
-        class surface& contour_line_spec(const class line_spec &contour_line_spec);
+        surface& contour_line_spec(const class line_spec &contour_line_spec);
 
         bool curtain() const;
-        class surface& curtain(bool curtain);
+        surface& curtain(bool curtain);
 
         bool waterfall() const;
-        class surface& waterfall(bool waterfall);
+        surface& waterfall(bool waterfall);
 
         bool fences() const;
-        class surface& fences(bool fences);
+        surface& fences(bool fences);
 
         bool ribbons() const;
-        class surface& ribbons(bool ribbons);
+        surface& ribbons(bool ribbons);
 
         double ribbon_width() const;
-        class surface& ribbon_width(double ribbon_width);
+        surface& ribbon_width(double ribbon_width);
 
         bool visible() const;
-        class surface& visible(bool visible);
+        surface& visible(bool visible);
 
     public /* getters and setters bypassing the line_spec */:
         float line_width() const;
-        class surface& line_width(float line_width);
+        surface& line_width(float line_width);
 
         const std::array<float, 4>& edge_color() const;
 
         template <class T>
-        class surface& edge_color(T c) {
+        surface& edge_color(T c) {
             line_spec().color(c);
             touch();
             return *this;
         }
 
-        inline class surface& edge_color(std::initializer_list<float> c) {
+        inline surface& edge_color(std::initializer_list<float> c) {
             line_spec().color(c);
             touch();
             return *this;

@@ -5,6 +5,7 @@
 #ifndef MATPLOTPLUSPLUS_GEODATA_H
 #define MATPLOTPLUSPLUS_GEODATA_H
 
+#include <string>
 #include <vector>
 
 namespace matplot {

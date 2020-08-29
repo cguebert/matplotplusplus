@@ -46,41 +46,41 @@ namespace matplot {
         enum axes_object::axes_category axes_category() override;
 
     public /* getters and setters */:
-        class network& line_style(const std::string& line_spec);
+        network& line_style(const std::string& line_spec);
 
         const line_spec &line_spec() const;
         class line_spec &line_spec();
-        class network& line_spec(const class line_spec &line_spec);
+        network& line_spec(const class line_spec &line_spec);
 
         const std::vector<double> &y_data() const;
-        class network& y_data(const std::vector<double> &y_data);
+        network& y_data(const std::vector<double> &y_data);
 
         const std::vector<double> &x_data() const;
-        class network& x_data(const std::vector<double> &x_data);
+        network& x_data(const std::vector<double> &x_data);
 
         const std::vector<double> &z_data() const;
-        class network& z_data(const std::vector<double> &z_data);
+        network& z_data(const std::vector<double> &z_data);
 
         const std::vector<size_t> &marker_indices() const;
-        class network& marker_indices(const std::vector<size_t> &marker_indices);
+        network& marker_indices(const std::vector<size_t> &marker_indices);
 
         bool use_y2() const;
-        class network& use_y2(bool use_y_2);
+        network& use_y2(bool use_y_2);
 
         bool use_y_2() const;
-        class network& use_y_2(bool use_y_2);
+        network& use_y_2(bool use_y_2);
 
         bool show_labels() const;
-        class network& show_labels(bool show_labels);
+        network& show_labels(bool show_labels);
 
         bool directed() const;
-        class network& directed(bool directed);
+        network& directed(bool directed);
 
         const std::vector<std::string> &edge_labels() const;
-        class network& edge_labels(const std::vector<std::string> &edge_labels);
+        network& edge_labels(const std::vector<std::string> &edge_labels);
 
         template <class C>
-        class network& edge_labels(const IterableValues<C> &e_labels) {
+        network& edge_labels(const IterableValues<C> &e_labels) {
             std::vector<std::string> str_labels;
             std::stringstream ss;
             for (const auto &edge_label : e_labels) {
@@ -93,10 +93,10 @@ namespace matplot {
         }
 
         const std::vector<std::string> &node_labels() const;
-        class network& node_labels(const std::vector<std::string> &node_labels);
+        network& node_labels(const std::vector<std::string> &node_labels);
 
         template <class C>
-        class network& node_labels(const IterableValues<C> &e_labels) {
+        network& node_labels(const IterableValues<C> &e_labels) {
             std::vector<std::string> str_labels;
             std::stringstream ss;
             for (const auto &edge_label : e_labels) {
@@ -109,69 +109,69 @@ namespace matplot {
         }
 
         const std::vector<double> &line_widths() const;
-        class network& line_widths(const std::vector<double> &line_widths);
+        network& line_widths(const std::vector<double> &line_widths);
 
         const std::vector<std::pair<size_t, size_t>> &edges() const;
-        class network& edges(const std::vector<std::pair<size_t, size_t>> &edges);
+        network& edges(const std::vector<std::pair<size_t, size_t>> &edges);
 
-        class network& n_vertices(size_t n_vertices);
+        network& n_vertices(size_t n_vertices);
 
         const vector_1d &weights() const;
-        class network& weights(const vector_1d &weights);
+        network& weights(const vector_1d &weights);
 
         layout layout_algorithm() const;
-        class network& layout_algorithm(layout layout_algorithm);
+        network& layout_algorithm(layout layout_algorithm);
 
         double layout_k() const;
-        class network& layout_k(double layout_k);
+        network& layout_k(double layout_k);
 
         int layout_iterations() const;
-        class network& layout_iterations(int layout_iterations);
+        network& layout_iterations(int layout_iterations);
 
         double energy_threshold() const;
-        class network& energy_threshold(double energy_threshold);
+        network& energy_threshold(double energy_threshold);
 
         const std::vector<float> &marker_sizes() const;
-        class network& marker_sizes(const std::vector<float> &marker_sizes);
+        network& marker_sizes(const std::vector<float> &marker_sizes);
 
         const std::vector<double> &marker_colors() const;
 
         bool visible() const;
-        class network& visible(bool visible);
+        network& visible(bool visible);
 
     public /* getters and setters bypassing the line_spec */:
         float line_width() const;
-        class network& line_width(float line_width);
+        network& line_width(float line_width);
 
         enum line_spec::marker_style marker_style() const;
         template <class T>
-        class network& marker_style(T marker_style) {
+        network& marker_style(T marker_style) {
             line_spec_.marker_style(marker_style);
             return *this;
         }
 
         enum line_spec::marker_style marker() const;
         template <class T>
-        class network& marker(T marker) {
+        network& marker(T marker) {
             line_spec_.marker(marker);
             return *this;
         }
 
         float marker_size() const;
-        class network& marker_size(float size);
-        class network& marker_size(const std::vector<float>& size_vector);
-        class network& marker_size(const std::vector<double>& size_vector);
+        network& marker_size(float size);
+        network& marker_size(const std::vector<float>& size_vector);
+        network& marker_size(const std::vector<double>& size_vector);
 
         bool marker_face() const;
-        class network& marker_face(bool size);
+        network& marker_face(bool size);
 
         const std::array<float, 4>& color() const;
         template <class T>
-        class network& color(T c) {
+        network& color(T c) {
             line_spec().color(c);
             return *this;
         }
-        inline class network& color(std::initializer_list<float> c) {
+        inline network& color(std::initializer_list<float> c) {
             line_spec().color(c);
             return *this;
         }
@@ -179,23 +179,23 @@ namespace matplot {
         const std::array<float, 4>& marker_color() const;
 
         template <class T>
-        class network& marker_color(T c) {
+        network& marker_color(T c) {
             line_spec().marker_color(c);
             return *this;
         }
 
         template <class T>
-        class network& node_color(T c) {
+        network& node_color(T c) {
             marker_color(c);
             return *this;
         }
 
-        inline class network& marker_color(std::initializer_list<float> c) {
+        inline network& marker_color(std::initializer_list<float> c) {
             line_spec().marker_color(c);
             return *this;
         }
 
-        inline class network& marker_colors(const std::vector<double>& cs) {
+        inline network& marker_colors(const std::vector<double>& cs) {
             marker_colors_ = cs;
             touch();
             return *this;
@@ -204,12 +204,12 @@ namespace matplot {
         const std::array<float, 4>& marker_face_color() const;
 
         template <class T>
-        class network& marker_face_color(T c) {
+        network& marker_face_color(T c) {
             line_spec().marker_face_color(c);
             return *this;
         }
 
-        inline class network& marker_face_color(std::initializer_list<float> c) {
+        inline network& marker_face_color(std::initializer_list<float> c) {
             line_spec().marker_face_color(c);
             return *this;
         }
@@ -218,7 +218,7 @@ namespace matplot {
             return line_spec().marker_face_alpha();
         }
 
-        inline class network& marker_face_alpha(float a) {
+        inline network& marker_face_alpha(float a) {
             line_spec().marker_face_alpha(a);
             return *this;
         }

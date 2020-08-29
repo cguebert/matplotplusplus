@@ -73,73 +73,73 @@ namespace matplot {
         enum axes_object::axes_category axes_category() override;
 
     public /* getters and setters */:
-        class contours& line_style(const std::string& line_spec);
+        contours& line_style(const std::string& line_spec);
 
         const line_spec &line_spec() const;
         class line_spec &line_spec();
-        class contours& line_spec(const class line_spec &line_spec);
+        contours& line_spec(const class line_spec &line_spec);
 
         const vector_2d &Y_data() const;
-        class contours& Y_data(const vector_2d &Y_data);
+        contours& Y_data(const vector_2d &Y_data);
 
         const vector_2d &X_data() const;
-        class contours& X_data(const vector_2d &X_data);
+        contours& X_data(const vector_2d &X_data);
 
         const vector_2d &Z_data() const;
-        class contours& Z_data(const vector_2d &Z_data);
+        contours& Z_data(const vector_2d &Z_data);
 
         const vector_2d &x_data() const;
-        class contours& x_data(const vector_2d &x_data);
+        contours& x_data(const vector_2d &x_data);
 
         const vector_2d &y_data() const;
-        class contours& y_data(const vector_2d &y_data);
+        contours& y_data(const vector_2d &y_data);
 
         const vector_2d &z_data() const;
-        class contours& z_data(const vector_2d &z_data);
+        contours& z_data(const vector_2d &z_data);
 
         bool contour_text() const;
-        class contours& contour_text(bool contour_text);
+        contours& contour_text(bool contour_text);
 
         const float font_size() const;
-        class contours& font_size(const float &font_size);
+        contours& font_size(const float &font_size);
 
         const std::string font() const;
-        class contours& font(const std::string &font);
+        contours& font(const std::string &font);
 
         const std::string &font_weight() const;
-        class contours& font_weight(const std::string &font_weight);
+        contours& font_weight(const std::string &font_weight);
 
         const color_array &font_color() const;
-        class contours& font_color(const color_array &font_color);
-        class contours& font_color(const std::string &font_color);
+        contours& font_color(const color_array &font_color);
+        contours& font_color(const std::string &font_color);
 
         bool visible() const;
-        class contours& visible(bool visible);
+        contours& visible(bool visible);
 
         size_t n_levels() const;
-        class contours& n_levels(size_t n_levels);
+        contours& n_levels(size_t n_levels);
 
         const std::vector<double> &levels() const;
-        class contours& levels(const std::vector<double> &levels);
+        contours& levels(const std::vector<double> &levels);
 
         bool filled() const;
-        class contours& filled(bool filled);
+        contours& filled(bool filled);
 
         bool colormap_line_when_filled() const;
 
-        class contours& colormap_line_when_filled(bool colormap_line_when_filled);
+        contours& colormap_line_when_filled(bool colormap_line_when_filled);
 
     public /* getters and setters bypassing the line_spec */:
         float line_width() const;
-        class contours& line_width(float line_width);
+        contours& line_width(float line_width);
 
         const std::array<float, 4>& color() const;
 
         template <class T>
-        class contours& color(T c) {
+        contours& color(T c) {
             line_spec().color(c);
         }
-        inline class contours& color(std::initializer_list<float> c) {
+        inline contours& color(std::initializer_list<float> c) {
             line_spec().color(c);
             return *this;
         }

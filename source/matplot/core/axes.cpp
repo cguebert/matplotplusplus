@@ -5,6 +5,7 @@
 #include <cmath>
 #include <sstream>
 #include <memory>
+#include <iomanip>
 
 #include <matplot/core/axes.h>
 #include <matplot/core/axes_object.h>

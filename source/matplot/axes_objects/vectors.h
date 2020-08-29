@@ -49,75 +49,75 @@ namespace matplot {
         enum axes_object::axes_category axes_category() override;
 
     public /* getters and setters */:
-        class vectors& line_style(const std::string& line_spec);
+        vectors& line_style(const std::string& line_spec);
 
         const line_spec &line_spec() const;
         class line_spec &line_spec();
-        class vectors& line_spec(const class line_spec &line_spec);
+        vectors& line_spec(const class line_spec &line_spec);
 
         const std::vector<double> &y_data() const;
-        class vectors& y_data(const std::vector<double> &y_data);
+        vectors& y_data(const std::vector<double> &y_data);
 
         const std::vector<double> &x_data() const;
-        class vectors& x_data(const std::vector<double> &x_data);
+        vectors& x_data(const std::vector<double> &x_data);
 
         const std::vector<double> &z_data() const;
-        class vectors& z_data(const std::vector<double> &z_data);
+        vectors& z_data(const std::vector<double> &z_data);
 
         const std::vector<size_t> &marker_indices() const;
-        class vectors& marker_indices(const std::vector<size_t> &marker_indices);
+        vectors& marker_indices(const std::vector<size_t> &marker_indices);
 
         bool use_y2() const;
-        class vectors& use_y2(bool use_y_2);
+        vectors& use_y2(bool use_y_2);
 
         bool impulse() const;
-        class vectors& impulse(bool impulse);
+        vectors& impulse(bool impulse);
 
         bool fill() const;
-        class vectors& fill(bool fill);
+        vectors& fill(bool fill);
 
         bool use_y_2() const;
-        class vectors& use_y_2(bool use_y_2);
+        vectors& use_y_2(bool use_y_2);
 
         bool polar() const;
-        class vectors& polar(bool polar);
+        vectors& polar(bool polar);
 
         bool visible() const;
-        class vectors& visible(bool visible);
+        vectors& visible(bool visible);
 
     public /* getters and setters bypassing the line_spec */:
         float line_width() const;
-        class vectors& line_width(float line_width);
+        vectors& line_width(float line_width);
 
         enum line_spec::marker_style marker_style() const;
         template <class T>
-        class vectors& marker_style(T marker_style) {
+        vectors& marker_style(T marker_style) {
             line_spec_.marker_style(marker_style);
             return *this;
         }
 
         enum line_spec::marker_style marker() const;
         template <class T>
-        class vectors& marker(T marker) {
+        vectors& marker(T marker) {
             line_spec_.marker(marker);
             return *this;
         }
 
         float marker_size() const;
-        class vectors& marker_size(float size);
-        class vectors& marker_size(const std::vector<float>& size_vector);
-        class vectors& marker_size(const std::vector<double>& size_vector);
+        vectors& marker_size(float size);
+        vectors& marker_size(const std::vector<float>& size_vector);
+        vectors& marker_size(const std::vector<double>& size_vector);
 
         bool marker_face() const;
-        class vectors& marker_face(bool size);
+        vectors& marker_face(bool size);
 
         const std::array<float, 4>& color() const;
         template <class T>
-        class vectors& color(T c) {
+        vectors& color(T c) {
             line_spec().color(c);
             return *this;
         }
-        inline class vectors& color(std::initializer_list<float> c) {
+        inline vectors& color(std::initializer_list<float> c) {
             line_spec().color(c);
             return *this;
         }
@@ -126,17 +126,17 @@ namespace matplot {
         const std::array<float, 4>& marker_color() const;
 
         template <class T>
-        class vectors& marker_color(T c) {
+        vectors& marker_color(T c) {
             line_spec().marker_color(c);
             return *this;
         }
 
-        inline class vectors& marker_color(std::initializer_list<float> c) {
+        inline vectors& marker_color(std::initializer_list<float> c) {
             line_spec().marker_color(c);
             return *this;
         }
 
-        inline class vectors& marker_colors(const std::vector<double>& cs) {
+        inline vectors& marker_colors(const std::vector<double>& cs) {
             marker_colors_ = cs;
             touch();
             return *this;
@@ -145,12 +145,12 @@ namespace matplot {
         const std::array<float, 4>& marker_face_color() const;
 
         template <class T>
-        class vectors& marker_face_color(T c) {
+        vectors& marker_face_color(T c) {
             line_spec().marker_face_color(c);
             return *this;
         }
 
-        inline class vectors& marker_face_color(std::initializer_list<float> c) {
+        inline vectors& marker_face_color(std::initializer_list<float> c) {
             line_spec().marker_face_color(c);
             return *this;
         }
@@ -159,7 +159,7 @@ namespace matplot {
             return line_spec().marker_face_alpha();
         }
 
-        inline class vectors& marker_face_alpha(float a) {
+        inline vectors& marker_face_alpha(float a) {
             line_spec().marker_face_alpha(a);
             return *this;
         }

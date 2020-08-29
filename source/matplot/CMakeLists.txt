@@ -115,3 +115,8 @@ add_library(matplot_opengl
         backend/opengl_3.h
         backend/opengl_3.cpp)
 target_link_libraries(matplot_opengl PUBLIC matplot glad glfw)
+
+if(WIN32)
+    target_compile_definitions(matplot PRIVATE NOMINMAX)
+    set_source_files_properties(util/world_map_50m.cpp util/world_map_10m.cpp PROPERTIES COMPILE_FLAGS "/bigobj")
+endif()

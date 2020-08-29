@@ -66,7 +66,7 @@ namespace matplot::backend {
         // look at the extension
         namespace fs = std::filesystem;
         fs::path p{filename};
-        std::string ext = p.extension();
+        std::string ext = p.extension().string();
 
         // check terminal for that extension
         constexpr auto exts = extension_terminal();
@@ -124,7 +124,7 @@ namespace matplot::backend {
         terminal_ = format;
 
         // Append extension if needed
-        std::string ext = p.extension();
+        std::string ext = p.extension().string();
         if (ext.empty()) {
             output_ += it->first;
         }
@@ -220,7 +220,11 @@ namespace matplot::backend {
         if (!pipe_) {
             return;
         }
+#ifdef WIN32
+        size_t pipe_capacity = pipe_capacity_worst_case; // TODO: adapt the code below to Windows, if possible
+#else
         size_t pipe_capacity = (pipe_->_bf._base != nullptr) ? pipe_->_bf._size : pipe_capacity_worst_case;
+#endif
         if (command.size() + bytes_in_pipe_ > pipe_capacity) {
             flush_commands();
             bytes_in_pipe_ = 0;

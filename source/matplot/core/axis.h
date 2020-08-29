@@ -34,83 +34,83 @@ namespace matplot {
     public:
         const std::array<double, 2> &limits() const;
 
-        class axis& limits(const std::array<double, 2> &limits);
+        axis& limits(const std::array<double, 2> &limits);
 
         bool limits_mode_auto() const;
         bool limits_mode_manual() const;
-        class axis& limits_mode_auto(bool limits_mode_auto);
-        class axis& limits_mode_manual(bool limits_mode_manual);
+        axis& limits_mode_auto(bool limits_mode_auto);
+        axis& limits_mode_manual(bool limits_mode_manual);
         std::string range_string() const;
 
         bool reverse() const;
-        class axis& reverse(bool reverse);
+        axis& reverse(bool reverse);
 
         const color_array &color() const;
-        class axis& color(const color_array &color);
-        class axis& color(const std::string &color);
-        class axis& color(const enum color &color);
+        axis& color(const color_array &color);
+        axis& color(const std::string &color);
+        axis& color(const enum color &color);
 
         const std::string &label() const;
-        class axis& label(const std::string &label);
+        axis& label(const std::string &label);
 
         const std::string &tick_label_format() const;
-        class axis& tick_label_format(const std::string &tick_label_format);
+        axis& tick_label_format(const std::string &tick_label_format);
 
         bool tick_values_automatic() const;
-        class axis& tick_values_automatic(bool tick_values_automatic);
+        axis& tick_values_automatic(bool tick_values_automatic);
 
         bool tick_values_manual() const;
-        class axis& tick_values_manual(bool tick_values_manual);
+        axis& tick_values_manual(bool tick_values_manual);
 
         /// Get tick values
         /// This might be tick values provided by the user
         /// or tick values calculated automatically for the range
         const std::vector<double> &tick_values() const;
-        class axis& tick_values(const std::vector<double> &tick_values);
+        axis& tick_values(const std::vector<double> &tick_values);
 
         /// Get tick values
         /// This might be tick labels provided by the user
         /// or tick labels according to a format
         const std::vector<std::string> &ticklabels() const;
-        class axis& ticklabels(const std::vector<std::string> &ticklabels);
+        axis& ticklabels(const std::vector<std::string> &ticklabels);
 
         bool ticklabels_mode() const;
-        class axis& ticklabels_mode(bool ticklabels_mode);
+        axis& ticklabels_mode(bool ticklabels_mode);
 
         float tickangle() const;
-        class axis& tickangle(float tickangle);
+        axis& tickangle(float tickangle);
 
         axis_scale scale() const;
-        class axis& scale(axis_scale scale);
+        axis& scale(axis_scale scale);
 
         float tick_length() const;
-        class axis& tick_length(float tick_length);
+        axis& tick_length(float tick_length);
 
         bool zero_axis() const;
-        class axis& zero_axis(bool zero_axis);
+        axis& zero_axis(bool zero_axis);
 
         bool geographic() const;
-        class axis& geographic(bool geographic);
+        axis& geographic(bool geographic);
 
         bool on_axis() const;
-        class axis& on_axis(bool on_axis);
+        axis& on_axis(bool on_axis);
 
         const std::string &label_weight() const;
-        class axis& label_weight(const std::string &label_weight);
+        axis& label_weight(const std::string &label_weight);
 
         float label_font_size() const;
-        class axis& label_font_size(float label_font_size);
+        axis& label_font_size(float label_font_size);
 
         const color_array &label_color() const;
-        class axis& label_color(const color_array &label_color);
+        axis& label_color(const color_array &label_color);
         template <class T>
-        class axis& label_color(T c) {
+        axis& label_color(T c) {
             label_color(to_array(c));
             return *this;
         }
 
         bool visible() const;
-        class axis& visible(bool visible);
+        axis& visible(bool visible);
 
     public:
         std::string label_string() const;

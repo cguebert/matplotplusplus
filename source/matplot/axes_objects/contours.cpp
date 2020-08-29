@@ -11,7 +11,6 @@
 #include <matplot/axes_objects/histogram.h>
 #include <matplot/core/axes.h>
 #include <matplot/util/common.h>
-#include <matplot/freestanding/plot.h>
 
 namespace matplot {
     contours::contours(class axes* parent, const vector_2d& X, const vector_2d& Y, const vector_2d& Z, const std::string& line_spec)
@@ -926,7 +925,7 @@ namespace matplot {
         if (contour_text_) {
             // We always check if a label is not too close to another label
             constexpr double minimum_distance = 0.8;
-            auto too_close = [](double x1, double y1, double x2, double y2) {
+            auto too_close = [minimum_distance](double x1, double y1, double x2, double y2) {
                 return abs(x1 - x2) < minimum_distance && abs(y1 - y2) < minimum_distance;
             };
 
@@ -1287,7 +1286,7 @@ namespace matplot {
         // The starting point
         // We convert tot int because the square trace algorithm
         // might go outside the image
-        auto start = std::make_pair<int,int>(start_i, start_j);
+        auto start = std::make_pair(static_cast<int>(start_i), static_cast<int>(start_j));
 
         const size_t n_rows = Z.size();
         const size_t n_cols = Z[0].size();
